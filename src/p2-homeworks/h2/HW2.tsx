@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import Affairs from './Affairs'
+import Affair from "./Affair";
 
 // types
 export type AffairPriorityType = any // need to fix any
@@ -34,7 +35,8 @@ function HW2() {
     return (
         <div>
             <hr/>
-            homeworks 2
+            HW 2
+            <Affair affair={1} deleteAffairCallback={1}/>
 
             {/*should work (должно работать)*/}
             <Affairs
