@@ -11,7 +11,8 @@ const messageData = {
 
 function HW1() {
     return (
-        <div >
+        <div>
+            ДЗ1
             <div>
                 <Message
                     avatar={messageData.avatar}
@@ -22,7 +23,7 @@ function HW1() {
             </div>
             {/*для личного творчества, могу проверить*/}
             {/*<AlternativeMessage/>*/}
-
+            <hr/>
         </div>
     )
 }
