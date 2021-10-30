@@ -7,7 +7,7 @@ type GreetingPropsType = {
     addUser: ()=> void// need to fix any
     error: string // need to fix any
     totalUsers: number // need to fix any
-    onKeyPressHandler:(e: KeyboardEvent<HTMLInputElement>)=>void
+    onKeyPressHandler:(e:KeyboardEvent<HTMLInputElement>)=>void
 }
 
 // презентационная компонента (для верстальщика)
@@ -21,7 +21,6 @@ const Greeting: React.FC<GreetingPropsType> = (
             <input value={name} onChange={setNameCallback} onKeyPress={onKeyPressHandler} className={inputClass}/>
             <span>{error}</span>
             <button onClick={addUser}>add</button>
-
             <span>{totalUsers}</span>
         </div>
     )
