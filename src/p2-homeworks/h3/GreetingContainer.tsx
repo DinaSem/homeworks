@@ -1,10 +1,10 @@
-import React, {ChangeEvent, useState,  KeyboardEvent} from 'react'
+import React, {ChangeEvent, KeyboardEvent, useState} from 'react'
 import Greeting from './Greeting'
 import {UserType} from "./HW3";
 
 type GreetingContainerPropsType = {
-    users: UserType[] // need to fix any
-    addUserCallback: (name:string) =>void// need to fix any
+    users: UserType[]// need to fix any
+    addUserCallback: (name: string)=>void // need to fix any
 }
 
 // более простой и понятный для новичков
@@ -16,42 +16,41 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUser
     const [name, setName] = useState<string>('') // need to fix any
     const [error, setError] = useState<string>('') // need to fix any
 
-    const setNameCallback = (event: ChangeEvent<HTMLInputElement>) => { // need to fix any
-        const trimCheck = event.currentTarget.value.trim() // need to fix
+    const setNameCallback = (e:ChangeEvent<HTMLInputElement> ) => {
+        const trimeName = e.currentTarget.value.trim()
 
-        if(trimCheck){
-            setName(trimCheck)
-            setError('')
-        }
-        else{
+        if(trimeName){
+            setName(trimeName)
+            error && setError('')
+        }else{
             setName('')
-            setError('не годится')
-            addUserCallback(name)
+            setError('напиши хоть что-то')
         }
-
     }
+
     const addUser = () => {
         addUserCallback(name)
-        alert(`Hello  ${name} !`) // need to fix
+        alert(`Hello + ${name} !`) // need to fix
         setName('')
     }
-    const onKeyPressHandler = (event: KeyboardEvent<HTMLInputElement>) => {
-        if (event.key === 'Enter') {
-            addUserCallback(name)
-            setName('')
 
+    const onKeyPress=(e:KeyboardEvent<HTMLInputElement>)=>{
+        if (e.key==="Enter"&& name){
+            addUser()
+            setName('')
         }
     }
+
     const totalUsers = users.length // need to fix
 
     return (
         <Greeting
             name={name}
             setNameCallback={setNameCallback}
-            onKeyPressHandler={onKeyPressHandler}
             addUser={addUser}
             error={error}
             totalUsers={totalUsers}
+            onKeyPress={onKeyPress}
         />
     )
 }

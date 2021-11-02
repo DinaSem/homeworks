@@ -5,3 +5,9 @@
 .error {
     border: 1px solid red;
 }
+.errorInput{
+color: red;
+}
+.button{
+    background-color: olivedrab;
+}
