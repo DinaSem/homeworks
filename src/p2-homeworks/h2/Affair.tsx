@@ -1,5 +1,6 @@
 import React from 'react'
 import {AffairType, deleteAffair} from './HW2'
+import s from './Affairs.module.css'
 
 type AffairPropsType = {
     // key не нужно типизировать
@@ -15,7 +16,7 @@ props.deleteAffairCallback(props.affair._id)
         <div>
           <span>{" " + props.affair.name +" "}</span>
           <span>{" " + props.affair.priority +" "}</span>
-            <button onClick={deleteCallback}>X</button>
+            <button className={s.littleButton} onClick={deleteCallback}>X</button>
         </div>
     )
 }
