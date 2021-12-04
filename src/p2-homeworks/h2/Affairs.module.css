@@ -48,11 +48,6 @@
     outline: 0;
 }
 
-
-
-
-
-
 .littleButton
 
 .button {
@@ -110,7 +105,7 @@
     transition: 0s
 }
 
-.dbutton:focus {
+.button:focus {
     outline: 0;
 }
 
