@@ -1,28 +1,31 @@
-import React, {useState} from "react";
+import React from "react";
 import s from "./HW12.module.css";
 import SuperSelect from "../h7/common/c5-SuperSelect/SuperSelect";
 import {AppStoreType} from "../h10/bll/store";
 import {useDispatch, useSelector} from "react-redux";
+import {darkAc, redAc, someAc} from "./bll/themeReducer";
 
 const themes: Array<string> = ['some', 'red', 'dark'];
 
 function HW12() {
-    const theme = useSelector((state: AppStoreType) => state.theme.themes)
+    const getedtheme = useSelector((state: AppStoreType) => state.theme.themes)
     const dispatch = useDispatch()
 const onChangeOption = (options:string) => {
   if (options==='some'){
-      dispatch(('SOME'))
-  }if  (options==='red'){
-        dispatch(('RED'))
-  }if (options==='dark'){
-        dispatch(('DARK'))
+      dispatch(someAc())
+  }
+  if  (options==='red'){
+        dispatch(redAc())
+  }
+  if (options==='dark'){
+        dispatch(darkAc())
     }
 }
 
     return (
-        <div className={s[theme]}>
+        <div className={s[getedtheme]}>
             <hr/>
-            <span className={s[theme + '-text']}>
+            <span className={s[getedtheme + '-text']}>
                 homeworks 12
 
                 <div className={s.wrapperHW12}>

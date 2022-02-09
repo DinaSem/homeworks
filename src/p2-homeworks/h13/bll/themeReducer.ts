@@ -19,24 +19,14 @@ export const themeReducer = (state: ThemeInitState = initState, action: ThemeAct
 };
 export type ThemeActionTotalType = SetDarkThemeActionType | SetRedThemeActionType | SetSomeThemeActionType
 
-type SetDarkThemeActionType = ReturnType<typeof darkAc>
-
-type SetRedThemeActionType = ReturnType<typeof redAc>
-
-type SetSomeThemeActionType = ReturnType<typeof someAc>
-
-export const darkAc =  ()=> {
-    return{
-        type: 'DARK'
-    }as const
+type SetDarkThemeActionType = {
+    type: 'DARK'
 }
-export const redAc =  ()=> {
-    return{
-        type: 'RED'
-    }as const
+
+type SetRedThemeActionType = {
+    type: 'RED'
 }
-export const someAc =  ()=> {
-    return{
-        type: 'SOME'
-    }as const
+
+type SetSomeThemeActionType = {
+    type: 'SOME'
 }
